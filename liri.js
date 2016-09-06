@@ -20,32 +20,31 @@ var getArtistNames = function(artist){
 //Function for finding songs on Spotify
 var getMeSpotify = function(songName){
 //If it doesn't find a song, find Blink 182's What's my age again
-    if (songName == undefined){
+    if (songName === undefined){
         songName = 'What\'s my age again';
     }
 
-    spotify.search({type: 'track', query: songName}, function(err, data){
-        if(err){
-            console.log('Error occured: ' + err);
+    spotify.search({ type: 'track', query: songName }, function(err, data) {
+        if ( err ) {
+            console.log('Error occurred: ' + err);
             return;
         }
-            //debugger used to find out what's inside data in the iron-node console
-        var songs = data.track.items;
-        var data = [];
-        
+
+        var songs = data.tracks.items;
+
         //This for loop will display the information about the song(s) to the console
-        for(var i=0; i< songs.length; i++){
-           
+        for(var i = 0; i < songs.length; i++){
             console.log(i);
             console.log('artist(s): ' + songs[i].artists.map(getArtistNames));
             console.log('song name: ' + songs[i].name);
             console.log('preview song: ' + songs[i].preview_url);
             console.log('album: ' + songs[i].album.name);
-            console.log('------------------------------------');
-        
+            console.log('-----------------------------------');
         }
     });
 }
+
+
 
 
 var getTweets = function() {
@@ -70,15 +69,16 @@ var getTweets = function() {
 };
 
 var getMeMovie = function(movieName){
-//if the movie name is undefined, give Mr Nobody
-    if(movieName == undefined){
+
+    if (movieName === undefined){
         movieName = 'Mr Nobody';
     }
 
-    var urlHit = 'http://www.ombdapi.com/?t' + movieName + "&y=&plot=full&tomatoes=true&r=json";
-    request(urlHit, function(error, response, body){
-        if(!error && response.statusCode == 200){
-            var jsonData = JSON.parse(body);
+    var urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&r=json";
+
+    request(urlHit, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var jsonData = JSON.parse(body);
 
         console.log('Title: ' + jsonData.Title);
         console.log('Year: ' + jsonData.Year);
@@ -89,23 +89,24 @@ var getMeMovie = function(movieName){
         console.log('Plot: ' + jsonData.Plot);
         console.log('Actors: ' + jsonData.Actors);
         console.log('Rotten Tomatoes Rating: ' + jsonData.tomatoRating);
-        console.log('Rotten Tomatoes URL: ' + jsonData.tomatoURL);
-        }
+        console.log('Rotton Tomatoes URL: ' + jsonData.tomatoURL);
+      }
     });
+
 }
-// console.log(JSON.stringify(data, null, 2));
 
 var doWhatItSays = function(){
-    fs.readFile("random.txt", "utf8", function(error, data){
+    fs.readFile("random.txt", "utf8", function(error, data) {
         console.log(data);
-
+        
         var dataArr = data.split(',')
 
         if (dataArr.length == 2){
             pick(dataArr[0], dataArr[1]);
-        }else if(dataArr.length == 1){
+        }else if (dataArr.length == 1){
             pick(dataArr[0]);
         }
+        
     });
 }
 

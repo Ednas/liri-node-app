@@ -9,7 +9,7 @@
   "author": "Edna Neal",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.69.0",
+    "request": "^2.74.0",
     "spotify": "^0.3.0",
     "twitter": "^1.2.5"
   }
