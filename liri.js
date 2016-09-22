@@ -62,7 +62,7 @@ var getMeSpotify = function(songName) {
 var getTweets = function() {
   var client = new twitter(dataKeys.twitterKeys);
 
-  var params = { screen_name: 'ednas', count: 20 };
+  var params = { screen_name: 'ednas', count: 10 };
 
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
@@ -90,19 +90,24 @@ var getMeMovie = function(movieName) {
 
   request(urlHit, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+      var data = [];
       var jsonData = JSON.parse(body);
 
-      console.log('Title: ' + jsonData.Title);
-      console.log('Year: ' + jsonData.Year);
-      console.log('Rated: ' + jsonData.Rated);
-      console.log('IMDB Rating: ' + jsonData.imdbRating);
-      console.log('Country: ' + jsonData.Country);
-      console.log('Language: ' + jsonData.Language);
-      console.log('Plot: ' + jsonData.Plot);
-      console.log('Actors: ' + jsonData.Actors);
-      console.log('Rotten Tomatoes Rating: ' + jsonData.tomatoRating);
-      console.log('Rotton Tomatoes URL: ' + jsonData.tomatoURL);
-    }
+      data.push({
+      'Title: ' : jsonData.Title,
+      'Year: ' : jsonData.Year,
+      'Rated: ' : jsonData.Rated,
+      'IMDB Rating: ' : jsonData.imdbRating,
+      'Country: ' : jsonData.Country,
+      'Language: ' : jsonData.Language,
+      'Plot: ' : jsonData.Plot,
+      'Actors: ' : jsonData.Actors,
+      'Rotten Tomatoes Rating: ' : jsonData.tomatoRating,
+      'Rotton Tomatoes URL: ' : jsonData.tomatoURL,
+  });
+      console.log(data);
+      writeToLog(data);
+}
   });
 
 }
@@ -110,7 +115,7 @@ var getMeMovie = function(movieName) {
 var doWhatItSays = function() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     console.log(data);
-
+    writeToLog(data);
     var dataArr = data.split(',')
 
     if (dataArr.length == 2) {
