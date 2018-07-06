@@ -16,3 +16,4 @@ Follow the format presented in these queries
 * node liri.js movie-this '<movie name here>'
 * node liri.js do-what-it-says 
 ```
+*2018 - npm package spotify hasn't been maintained, so I switched to node-spotify-api to handle the spotify requests.*

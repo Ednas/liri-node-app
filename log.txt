@@ -21,3 +21,49 @@
 [{"created at: ":"Tue Sep 27 23:46:58 +0000 2016","Tweets: ":"When your tester improves your code ❤️ https://t.co/wd3CgzM5HE"},{"created at: ":"Tue Sep 27 20:04:10 +0000 2016","Tweets: ":"RT @SwiftOnSecurity: https://t.co/KqXzpdlcCJ"},{"created at: ":"Tue Sep 27 19:55:10 +0000 2016","Tweets: ":"RT @SwiftOnSecurity: Turns out it was just fat nerds not the Russians https://t.co/HL1QhLsGHL"},{"created at: ":"Tue Sep 27 09:42:44 +0000 2016","Tweets: ":"RT @jeremiahg: When the candidates say, “We have to be tough on cyber,” I can’t help but be reminded of Aaron Swartz."},{"created at: ":"Tue Sep 27 05:33:01 +0000 2016","Tweets: ":"Dubstep and coding, oh and it's like 1:30am. Need more coffee"},{"created at: ":"Mon Sep 26 19:52:43 +0000 2016","Tweets: ":"@codeschool @MrTruthDev @github Awesome idea, can I add Icelandic (is) translation?"},{"created at: ":"Mon Sep 26 00:36:57 +0000 2016","Tweets: ":"Only 3 more days until I finish with UCF's Coding Boot Camp, I'm so proud of the progress I've made!"},{"created at: ":"Sat Sep 24 16:26:54 +0000 2016","Tweets: ":"@sassyscoopics Happy birthday to you. There are balloons on your Twitter. Happy birthday to you 🎈🎈🎈🎉🎉"},{"created at: ":"Fri Sep 23 18:43:21 +0000 2016","Tweets: ":"I encourage my kids to explore the computer, last encounter was a POST beep, we found out it was the RAM and I let my 10 y/o fix it #techkid"},{"created at: ":"Thu Sep 22 23:42:27 +0000 2016","Tweets: ":"I think I need a second screen (or even a third)"}]
 
 [{"Title: ":"Mr. Smith Goes to Washington","Year: ":"1939","Rated: ":"NOT RATED","IMDB Rating: ":"8.2","Country: ":"USA","Language: ":"English","Plot: ":"Naive and idealistic Jefferson Smith, leader of the Boy Rangers, is appointed on a lark by the spineless governor of his state. He is reunited with the state's senior senator--presidential hopeful and childhood hero, Senator Joseph Paine. In Washington, however, Smith discovers many of the shortcomings of the political process as his earnest goal of a national boys' camp leads to a conflict with the state political boss, Jim Taylor. Taylor first tries to corrupt Smith and then later attempts to destroy Smith through a scandal.","Actors: ":"Jean Arthur, James Stewart, Claude Rains, Edward Arnold","Rotten Tomatoes Rating: ":"7.4","Rotton Tomatoes URL: ":"http://www.rottentomatoes.com/m/can_mr_smith_get_to_washington_anymore/"}]
+
+[{"created at: ":"Wed Jan 17 18:44:00 +0000 2018","Tweets: ":"It's a snow day (Chattanooga version) so I'm hacking away in style. 👩‍💻 https://t.co/i8vSVzpNQj"},{"created at: ":"Fri Jan 05 15:03:31 +0000 2018","Tweets: ":"I'll be giving a Lightning Talk on Accessibility in Web apps at the ChaDev Meetup. Please join me and watch my talk… https://t.co/EQma5KzBzy"},{"created at: ":"Sat Dec 30 13:23:14 +0000 2017","Tweets: ":"RT @JonLemire: SAN JUAN, Puerto Rico (AP) — Puerto Rico authorities say nearly half of electricity customers still lack power more than thr…"},{"created at: ":"Sat Dec 30 13:20:42 +0000 2017","Tweets: ":"Finally installed Debian on my windows machine. I'm super happy with it."},{"created at: ":"Tue Nov 21 14:28:16 +0000 2017","Tweets: ":"Thanksgiving, the time of year you know recruiters are still alive because of all the Thanksgiving emails they send."},{"created at: ":"Fri Nov 17 16:31:00 +0000 2017","Tweets: ":"RT @tarah: You may not think that professional certifications prove anything about your smarts &amp; they're total BS.\n\nBut if your employer wi…"},{"created at: ":"Fri Nov 03 20:32:13 +0000 2017","Tweets: ":"RT @Snowden: Never underestimate the power of a worker with a conscience. https://t.co/Tjmu3qX93d"},{"created at: ":"Thu Oct 26 16:37:35 +0000 2017","Tweets: ":"Cool Chadev talk on mechanical keyboards! https://t.co/7EN6SepTkU"},{"created at: ":"Mon Oct 16 00:50:38 +0000 2017","Tweets: ":"RT @ThePracticalDev: Oh Ruby you monster https://t.co/8D2Zw6wlHJ"},{"created at: ":"Wed Oct 11 00:42:55 +0000 2017","Tweets: ":"@tarah @kamilah @Spacekatgal @k3r3n3 @kcunning @KTothSmith @thisgirlangie Yay! I would love to win it ❤👩‍💻👩‍🔧"}]
+
+"spotify-this-song,\"I Want it That Way\"\n"
+
+"spotify-this-song,\"I Want it That Way\"\n"
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Song Name: 'BOHEMIAN RHAPSODY'
+
+              Album Name: A Night At The Opera (Deluxe Remastered Version)
+
+              Artist Name: Queen
+
+              URL: https://open.spotify.com/album/6X9k3hSsvQck2OfKYdBbXr
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Song Name: 'HAVANA'
+
+              Album Name: Camila
+
+              Artist Name: Camila Cabello
+
+              URL: https://open.spotify.com/album/2vD3zSQr8hNlg0obNel4TE
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Song Name: 'SURRENDER'
+
+              Album Name: Heaven Tonight
+
+              Artist Name: Cheap Trick
+
+              URL: https://open.spotify.com/album/5w20U3G3GyWiPvvDeVzkhN
+
+
