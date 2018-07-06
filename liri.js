@@ -24,18 +24,17 @@ let writeToLog = function(data) {
     });
 }
 
+
 // =================================================================
 // Spotify function, Spotify api
 function getMeSpotify(songName) {
     let spotify = new Spotify(dataKeys.spotifyKeys);
 
-    let space = "\n" + "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
     if (!songName) {
-        SongName = "What's my age again";
+        songName = "What's my age again";
     }
 
-    params = songName;
-    spotify.search({ type: 'track', query: params }, function(err, data) {
+    spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
             return;
@@ -78,35 +77,70 @@ let getTweets = function() {
 
 let getMeMovie = function(movieName) {
 
-    if (movieName === undefined) {
-        movieName = 'Mr Nobody';
+    if (!movieName) {
+        movieName = "Mr Nobody";
     }
 
-    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&r=json";
+    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+    request(urlHit, function(err, res, body) {
+        if (err) {
+            console.log('Error occurred: ' + err);
+            return;
+        } else {
+            // if (!err && res.statusCode == 200) {
 
-    request(urlHit, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            let data = [];
             let jsonData = JSON.parse(body);
 
-            data.push({
-                'Title: ': jsonData.Title,
-                'Year: ': jsonData.Year,
-                'Rated: ': jsonData.Rated,
-                'IMDB Rating: ': jsonData.imdbRating,
-                'Country: ': jsonData.Country,
-                'Language: ': jsonData.Language,
-                'Plot: ': jsonData.Plot,
-                'Actors: ': jsonData.Actors,
-                'Rotten Tomatoes Rating: ': jsonData.tomatoRating,
-                'Rotton Tomatoes URL: ': jsonData.tomatoURL,
+            output = space + "================= LIRI FOUND THIS FOR YOU...==================" +
+                space + 'Title: ' + jsonData.Title +
+                space + 'Year: ' + jsonData.Year +
+                space + 'Rated: ' + jsonData.Rated +
+                space + 'IMDB Rating: ' + jsonData.imdbRating +
+                space + 'Country: ' + jsonData.Country +
+                space + 'Language: ' + jsonData.Language +
+                space + 'Plot: ' + jsonData.Plot +
+                space + 'Actors: ' + jsonData.Actors +
+                space + 'Rotten Tomatoes Rating: ' + jsonData.tomatoRating +
+                space + 'Rotton Tomatoes URL: ' + jsonData.tomatoURL + "\n\n\n";
+
+            console.log(output);
+
+            fs.appendFile("log.txt", output, function(err) {
+                if (err) throw err;
+                console.log('Saved!');
             });
-            console.log(data);
-            writeToLog(data);
         }
     });
 
 }
+
+// if (!error && response.statusCode == 200) {
+//     var movieObject = JSON.parse(body);
+//     var space = "\n" + "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
+//     //console.log(movieObject); // Show the text in the terminal
+//     var movieResults = " ===================== LIRI PROVIDED THIS DATA FOR YOU...====================\n" +
+//         space + "Title: " + movieObject.Title +
+//         space + "Year: " + movieObject.Year +
+//         space + "Imdb Rating: " + movieObject.imdbRating +
+//         space + "Country: " + movieObject.Country +
+//         space + "Language: " + movieObject.Language +
+//         space + "Rotten Tomatoes Rating: " + movieObject.tomatoRating +
+//         space + "Rotten Tomatoes URL: " + movieObject.tomatoURL + "\n\n\n" +
+//         space + "***[MORE INFO BELOW]*** \n\n\n" +
+//         "\nActors: ===> " + movieObject.Actors + "\n" +
+//         "\nPlot:  ===> " + movieObject.Plot + "\n" +
+//         "\n====== LIRI ====== LIRI ====== LIRI ====== LIRI====== LIRI ====== LIRI ======" + "\n" + "\n";
+
+//     console.log(movieResults);
+//     fs.appendFile("log.txt", movieResults, function(error) {
+//         if (error) throw error;
+//         console.log("saved!");
+//     });
+//     // console.log(movieObject);
+// } else {
+//     console.log("Error :" + error);
+//     return;
+// }
 
 let doWhatItSays = function() {
     fs.readFile("random.txt", "utf8", function(error, data) {
