@@ -56,12 +56,14 @@ function getMeSpotify(songName) {
 
 let getTweets = function() {
     let client = new twitter(dataKeys.twitterKeys);
-
     let params = { screen_name: 'ednas', count: 10 };
 
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
-        if (!error) {
+    client.get('statuses/user_timeline', params, function(err, tweets, res) {
+
+        if (!err) {
+            // let data = space + 'created at: ' + tweets.created_at +
+            //     space + 'Tweets: ' + tweets.text;
             let data = []; //empty array to hold data
             for (let i = 0; i < tweets.length; i++) {
                 data.push({
@@ -80,17 +82,17 @@ let getMeMovie = function(movieName) {
     if (!movieName) {
         movieName = "Mr Nobody";
     }
+    //Get your OMDb API key creds here http://www.omdbapi.com/apikey.aspx
+    // t = movietitle, y = year, plot is short, then the API key
+    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=33981212";
 
-    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     request(urlHit, function(err, res, body) {
         if (err) {
             console.log('Error occurred: ' + err);
             return;
         } else {
-            // if (!err && res.statusCode == 200) {
-
             let jsonData = JSON.parse(body);
-
+            // console.log(jsonData);
             output = space + "================= LIRI FOUND THIS FOR YOU...==================" +
                 space + 'Title: ' + jsonData.Title +
                 space + 'Year: ' + jsonData.Year +
@@ -100,8 +102,7 @@ let getMeMovie = function(movieName) {
                 space + 'Language: ' + jsonData.Language +
                 space + 'Plot: ' + jsonData.Plot +
                 space + 'Actors: ' + jsonData.Actors +
-                space + 'Rotten Tomatoes Rating: ' + jsonData.tomatoRating +
-                space + 'Rotton Tomatoes URL: ' + jsonData.tomatoURL + "\n\n\n";
+                space + 'IMDb Rating: ' + jsonData.imdbRating + "\n\n\n";
 
             console.log(output);
 
@@ -111,36 +112,7 @@ let getMeMovie = function(movieName) {
             });
         }
     });
-
 }
-
-// if (!error && response.statusCode == 200) {
-//     var movieObject = JSON.parse(body);
-//     var space = "\n" + "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
-//     //console.log(movieObject); // Show the text in the terminal
-//     var movieResults = " ===================== LIRI PROVIDED THIS DATA FOR YOU...====================\n" +
-//         space + "Title: " + movieObject.Title +
-//         space + "Year: " + movieObject.Year +
-//         space + "Imdb Rating: " + movieObject.imdbRating +
-//         space + "Country: " + movieObject.Country +
-//         space + "Language: " + movieObject.Language +
-//         space + "Rotten Tomatoes Rating: " + movieObject.tomatoRating +
-//         space + "Rotten Tomatoes URL: " + movieObject.tomatoURL + "\n\n\n" +
-//         space + "***[MORE INFO BELOW]*** \n\n\n" +
-//         "\nActors: ===> " + movieObject.Actors + "\n" +
-//         "\nPlot:  ===> " + movieObject.Plot + "\n" +
-//         "\n====== LIRI ====== LIRI ====== LIRI ====== LIRI====== LIRI ====== LIRI ======" + "\n" + "\n";
-
-//     console.log(movieResults);
-//     fs.appendFile("log.txt", movieResults, function(error) {
-//         if (error) throw error;
-//         console.log("saved!");
-//     });
-//     // console.log(movieObject);
-// } else {
-//     console.log("Error :" + error);
-//     return;
-// }
 
 let doWhatItSays = function() {
     fs.readFile("random.txt", "utf8", function(error, data) {

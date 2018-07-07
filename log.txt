@@ -134,3 +134,146 @@
 [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
 
 [{"created at: ":"Wed Jan 17 18:44:00 +0000 2018","Tweets: ":"It's a snow day (Chattanooga version) so I'm hacking away in style. 👩‍💻 https://t.co/i8vSVzpNQj"},{"created at: ":"Fri Jan 05 15:03:31 +0000 2018","Tweets: ":"I'll be giving a Lightning Talk on Accessibility in Web apps at the ChaDev Meetup. Please join me and watch my talk… https://t.co/EQma5KzBzy"},{"created at: ":"Sat Dec 30 13:23:14 +0000 2017","Tweets: ":"RT @JonLemire: SAN JUAN, Puerto Rico (AP) — Puerto Rico authorities say nearly half of electricity customers still lack power more than thr…"},{"created at: ":"Sat Dec 30 13:20:42 +0000 2017","Tweets: ":"Finally installed Debian on my windows machine. I'm super happy with it."},{"created at: ":"Tue Nov 21 14:28:16 +0000 2017","Tweets: ":"Thanksgiving, the time of year you know recruiters are still alive because of all the Thanksgiving emails they send."},{"created at: ":"Fri Nov 17 16:31:00 +0000 2017","Tweets: ":"RT @tarah: You may not think that professional certifications prove anything about your smarts &amp; they're total BS.\n\nBut if your employer wi…"},{"created at: ":"Fri Nov 03 20:32:13 +0000 2017","Tweets: ":"RT @Snowden: Never underestimate the power of a worker with a conscience. https://t.co/Tjmu3qX93d"},{"created at: ":"Thu Oct 26 16:37:35 +0000 2017","Tweets: ":"Cool Chadev talk on mechanical keyboards! https://t.co/7EN6SepTkU"},{"created at: ":"Mon Oct 16 00:50:38 +0000 2017","Tweets: ":"RT @ThePracticalDev: Oh Ruby you monster https://t.co/8D2Zw6wlHJ"},{"created at: ":"Wed Oct 11 00:42:55 +0000 2017","Tweets: ":"@tarah @kamilah @Spacekatgal @k3r3n3 @kcunning @KTothSmith @thisgirlangie Yay! I would love to win it ❤👩‍💻👩‍🔧"}][object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+"\n\n              created at: undefined\n\n              Tweets: undefined"
+
+"\n\n              created at: undefined\n\n              Tweets: undefined"
+
+"\n\n              created at: undefined\n\n              Tweets: undefined"
+
+"\n\n              created at: undefined\n\n              Tweets: undefined"
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Song Name: 'THUNDER'
+
+              Album Name: Evolve
+
+              Artist Name: Imagine Dragons
+
+              URL: https://open.spotify.com/album/2iU0cUGlqNhNAPqoY54fMC
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Title: Home Alone
+
+              Year: 1990
+
+              Rated: PG
+
+              IMDB Rating: 7.5
+
+              Country: USA
+
+              Language: English
+
+              Plot: An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.
+
+              Actors: Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard
+
+              Rotten Tomatoes Rating: undefined
+
+              Rotton Tomatoes URL: undefined
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Title: undefined
+
+              Year: undefined
+
+              Rated: undefined
+
+              IMDB Rating: undefined
+
+              Country: undefined
+
+              Language: undefined
+
+              Plot: undefined
+
+              Actors: undefined
+
+              Rotten Tomatoes Rating: undefined
+
+              Rotton Tomatoes URL: undefined
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Title: undefined
+
+              Year: undefined
+
+              Rated: undefined
+
+              IMDB Rating: undefined
+
+              Country: undefined
+
+              Language: undefined
+
+              Plot: undefined
+
+              Actors: undefined
+
+              Rotten Tomatoes Rating: undefined
+
+              Rotton Tomatoes URL: undefined
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Title: Home Alone 2
+
+              Year: 2012
+
+              Rated: N/A
+
+              IMDB Rating: 5.1
+
+              Country: USA
+
+              Language: English
+
+              Plot: A sovereign woman is lost in New York.
+
+              Actors: Jessica Carlsen, Mark Anthony Hackett
+
+              Rotten Tomatoes Rating: undefined
+
+              Rotton Tomatoes URL: undefined
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+
+              Title: Blade Runner
+
+              Year: 1982
+
+              Rated: R
+
+              IMDB Rating: 8.2
+
+              Country: USA, Hong Kong
+
+              Language: English, German, Cantonese, Japanese, Hungarian, Arabic
+
+              Plot: A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator.
+
+              Actors: Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos
+
+              IMDb Rating: 8.2
+
+

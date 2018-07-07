@@ -18,6 +18,8 @@ exports.twitterKeys = {
     access_token_secret: 'Shhhh Secret',
 };
 
+//Get your Spotify API creds here: https://developer.spotify.com/my-applications/
+
 exports.spotifyKeys = {
     id: 'Long String',
     secret: 'Shhhh Secret'
