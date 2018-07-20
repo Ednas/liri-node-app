@@ -10,7 +10,7 @@ let fs = require('fs'); //file system
 let twitter = require('twitter');
 let Spotify = require('node-spotify-api');
 let request = require('request');
-let space = "\n" + "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
+let space = "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
 
 let writeToLog = function(data) {
     fs.appendFile("log.txt", '\r\n\r\n');
@@ -54,6 +54,13 @@ function getMeSpotify(songName) {
     });
 }
 
+function catName(name) {
+    if (!name) {
+        name = "Tigger"
+    }
+    console.log("My cat's name is " + name);
+}
+
 let getTweets = function() {
     let client = new twitter(dataKeys.twitterKeys);
     let params = { screen_name: 'ednas', count: 10 };
@@ -61,19 +68,30 @@ let getTweets = function() {
 
     client.get('statuses/user_timeline', params, function(err, tweets, res) {
 
-        if (!err) {
-            // let data = space + 'created at: ' + tweets.created_at +
+        if (err) {
+            console.log('Error occured: ' + err);
+            return;
+        } else {
+            // let data = space + 'Created at: ' + tweets.created_at +
             //     space + 'Tweets: ' + tweets.text;
             let data = []; //empty array to hold data
             for (let i = 0; i < tweets.length; i++) {
                 data.push({
-                    'created at: ': tweets[i].created_at,
+                    'Created at: ': tweets[i].created_at,
                     'Tweets: ': tweets[i].text,
                 });
             }
             console.log(data);
+            // console.log(tweets[0].user.description);
             writeToLog(data);
+
+            // fs.appendFile("log.txt", output, function(err) {
+            //     if (err) throw err;
+            //     console.log('Saved!');
+            // });
+
         }
+
     });
 };
 
@@ -102,13 +120,15 @@ let getMeMovie = function(movieName) {
                 space + 'Language: ' + jsonData.Language +
                 space + 'Plot: ' + jsonData.Plot +
                 space + 'Actors: ' + jsonData.Actors +
-                space + 'IMDb Rating: ' + jsonData.imdbRating + "\n\n\n";
+                space + 'Tomato Rating: ' + jsonData.Ratings[1].Value +
+                space + 'IMDb Rating: ' + jsonData.imdbRating + "\n";
 
             console.log(output);
 
             fs.appendFile("log.txt", output, function(err) {
                 if (err) throw err;
                 console.log('Saved!');
+                space
             });
         }
     });
@@ -139,6 +159,9 @@ let pick = function(caseData, functionData) {
             break;
         case 'movie-this':
             getMeMovie(functionData);
+            break;
+        case 'meow':
+            catName(functionData);
             break;
         case 'do-what-it-says':
             doWhatItSays();
