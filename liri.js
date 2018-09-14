@@ -39,11 +39,12 @@ function getMeSpotify(songName) {
             console.log('Error occurred: ' + err);
             return;
         } else {
-            output = space + "================= LIRI FOUND THIS FOR YOU...==================" +
+            output =
+                "================= LIRI FOUND THIS FOR YOU...==================" +
                 space + "Song Name: " + "'" + songName.toUpperCase() + "'" +
                 space + "Album Name: " + data.tracks.items[0].album.name +
                 space + "Artist Name: " + data.tracks.items[0].album.artists[0].name +
-                space + "URL: " + data.tracks.items[0].album.external_urls.spotify + "\n\n\n";
+                space + "URL: " + data.tracks.items[0].album.external_urls.spotify + "\n";
             console.log(output);
 
             fs.appendFile("log.txt", output, function(err) {
@@ -53,6 +54,39 @@ function getMeSpotify(songName) {
         };
     });
 }
+
+var startDate = "12/03/1999";
+var endDate = "12/10/1999";
+var getNEO = function() {
+    var startDate = "1999-12-03";
+    var endDate = "1999-12-10";
+    if (startDate === undefined) {
+        startDate = "12/04/1996";
+    }
+
+    var urlHit = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=smpOoGW6IuQgqcUmIAgJ0fICeLXteQwyUeazHF0c";
+
+    request(urlHit, function(error, response, body) {
+        if (error) {
+            console.log(error);
+        } else if (!error && response.statusCode === 200) {
+            var jsonData = JSON.parse(body);
+            // console.log(jsonData.element_count);
+            console.log("-----------------Data of Near Earth Objects-----------------");
+            var neow1 = jsonData.near_earth_objects[endDate];
+            console.log("Name: " + neow1[1].name);
+            console.log("ID: " + neow1[1].id);
+            console.log("Hazardous: " + neow1[1].is_potentially_hazardous_asteroid);
+            console.log("Diamater (Km): ");
+            console.log(neow1[1].estimated_diameter.kilometers);
+
+
+            // console.log("Near earth objects: " + jsonData.near_earth_objects.startDate.estimated_diameter);
+        } else {
+            console.log(response.statusCode);
+        }
+    });
+};
 
 function catName(name) {
     if (!name) {
@@ -64,7 +98,6 @@ function catName(name) {
 let getTweets = function() {
     let client = new twitter(dataKeys.twitterKeys);
     let params = { screen_name: 'ednas', count: 10 };
-
 
     client.get('statuses/user_timeline', params, function(err, tweets, res) {
 
@@ -165,6 +198,9 @@ let pick = function(caseData, functionData) {
             break;
         case 'do-what-it-says':
             doWhatItSays();
+            break;
+        case 'neo':
+            getNEO();
             break;
         default:
             console.log('LIRI doesn\'t know that');
