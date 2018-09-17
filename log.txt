@@ -323,3 +323,24 @@
 
 
 [{"Created at: ":"Thu Jul 26 03:54:18 +0000 2018","Tweets: ":"@Telliria @SimoneGiertz Thank you 😃 This is exactly what I've been missing in my life! Now I want to build shitty robots too, lol."},{"Created at: ":"Thu Jul 26 03:51:12 +0000 2018","Tweets: ":"@derftIII @SimoneGiertz Thank you!"},{"Created at: ":"Thu Jul 26 00:51:25 +0000 2018","Tweets: ":"RT @iamdevloper: Every now and then, ping one of your competitor's websites using an IE6 VM. Keep them on their toes."},{"Created at: ":"Mon Jul 23 11:47:20 +0000 2018","Tweets: ":"Hanging out at the maker space. Someone made cool wood cars. @ ChattLab Makerspace https://t.co/svyRs9Wxug"},{"Created at: ":"Mon Jul 23 04:58:42 +0000 2018","Tweets: ":"@sassyscoopics Haha, that sounds like a mix of bird brain and animaniacs. Love it."},{"Created at: ":"Mon Jul 23 04:56:17 +0000 2018","Tweets: ":"@GarrafaScoop @LandScooper @sassyscoopics @HeyScoops Thank you, that's a great suggestion!"},{"Created at: ":"Mon Jul 23 04:54:59 +0000 2018","Tweets: ":"@LandScooper @sassyscoopics @HeyScoops I love it! Thank you for the suggestions!!"},{"Created at: ":"Mon Jul 23 04:52:43 +0000 2018","Tweets: ":"So I just discovered @SimoneGiertz and she's my new role model. I managed to binge watch all her YouTube episodes i… https://t.co/cMEO3C77B4"},{"Created at: ":"Fri Jul 20 19:04:05 +0000 2018","Tweets: ":"My kiddos want to start a YouTube channel with me. We need a name. We want to cover teaching kids to code and birds. @sassyscoopics help?"},{"Created at: ":"Fri Jul 20 01:54:50 +0000 2018","Tweets: ":"Looking forward to tomorrow. Friday can't come soon enough!"}]
+
+"================= LIRI FOUND THIS FOR YOU...==================\n              Song Name: 'DON/'T STOP BELIEVING'\n              Album Name: Bjud upp till dans\n              Artist Name: Shake\n              URL: https://open.spotify.com/album/5y0McIPJMWlPkAoUERN4gF\n"
+
+"================= LIRI FOUND THIS FOR YOU...==================\n              Song Name: 'DON'T STOP BELIEVING'\n              Album Name: Covers Part IV\n              Artist Name: Anthem Lights\n              URL: https://open.spotify.com/album/6y6y4kyZ81PF951e9N4WBM\n"
+
+"================= LIRI FOUND THIS FOR YOU...==================\n              Song Name: 'SMALL TOWN GIRL'\n              Album Name: Small Town Girl\n              Artist Name: Kellie Pickler\n              URL: https://open.spotify.com/album/5bFtvUDukm5P0idSnW7M7n\n"
+
+"================= LIRI FOUND THIS FOR YOU...==================\n              Song Name: 'SMALL TOWN GIRL'\n              Album Name: Small Town Girl\n              Artist Name: Kellie Pickler\n              URL: https://open.spotify.com/album/5bFtvUDukm5P0idSnW7M7n\n"
+
+================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: 'SMALL TOWN GIRL'
+              Album Name: Small Town Girl
+              Artist Name: Kellie Pickler
+              URL: https://open.spotify.com/album/5bFtvUDukm5P0idSnW7M7n
+
+
+================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: 'PARTY STARTED'
+              Album Name: M!ssundaztood
+              Artist Name: P!nk
+              URL: https://open.spotify.com/album/03pT16iWbhVKpDodI37D8b

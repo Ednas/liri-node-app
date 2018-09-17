@@ -5,6 +5,7 @@
 // * do-what-it-says
 
 //these add other programs to this one
+require("dotenv").config();
 let dataKeys = require("./keys.js");
 let fs = require('fs'); //file system
 let twitter = require('twitter');
@@ -12,23 +13,28 @@ let Spotify = require('node-spotify-api');
 let request = require('request');
 let space = "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
 
-let writeToLog = function(data) {
-    fs.appendFile("log.txt", '\r\n\r\n');
+console.log(process.env.PORT);
 
-    fs.appendFile("log.txt", JSON.stringify(data), function(err) {
+function writeToLog(data) {
+    fs.appendFile("log.txt", '\r\n\r\n', function(err) {
         if (err) {
             return console.log(err);
         }
+    });
 
+    fs.appendFile("log.txt", (data), function(err) {
+        if (err) {
+            return console.log(err);
+        }
         console.log("log.txt was updated!");
     });
-}
+};
 
 
 // =================================================================
 // Spotify function, Spotify api
 function getMeSpotify(songName) {
-    let spotify = new Spotify(dataKeys.spotifyKeys);
+    let spotify = new Spotify(dataKeys.spotify);
 
     if (!songName) {
         songName = "What's my age again";
@@ -46,17 +52,15 @@ function getMeSpotify(songName) {
                 space + "Artist Name: " + data.tracks.items[0].album.artists[0].name +
                 space + "URL: " + data.tracks.items[0].album.external_urls.spotify + "\n";
             console.log(output);
-
-            fs.appendFile("log.txt", output, function(err) {
-                if (err) throw err;
-                console.log('Saved!');
-            });
-        };
+            writeToLog(output);
+            // fs.appendFile("log.txt", output, function(err) {
+            //     if (err) throw err;
+            //     console.log('Saved!');
+            // });
+        }
     });
 }
 
-var startDate = "12/03/1999";
-var endDate = "12/10/1999";
 var getNEO = function() {
     var startDate = "1999-12-03";
     var endDate = "1999-12-10";
@@ -72,16 +76,13 @@ var getNEO = function() {
         } else if (!error && response.statusCode === 200) {
             var jsonData = JSON.parse(body);
             // console.log(jsonData.element_count);
-            console.log("-----------------Data of Near Earth Objects-----------------");
+            console.log("------------Data of Near Earth Objects-----------------");
             var neow1 = jsonData.near_earth_objects[endDate];
-            console.log("Name: " + neow1[1].name);
-            console.log("ID: " + neow1[1].id);
-            console.log("Hazardous: " + neow1[1].is_potentially_hazardous_asteroid);
-            console.log("Diamater (Km): ");
-            console.log(neow1[1].estimated_diameter.kilometers);
-
-
-            // console.log("Near earth objects: " + jsonData.near_earth_objects.startDate.estimated_diameter);
+            console.log(space + "Name: " + neow1[1].name);
+            console.log(space + "ID: " + neow1[1].id);
+            console.log(space + "Hazardous: " + neow1[1].is_potentially_hazardous_asteroid);
+            console.log(space + "Diamater min (Km): " + neow1[1].estimated_diameter.kilometers.estimated_diameter_min);
+            console.log(space + "Diamater max (Km): " + neow1[1].estimated_diameter.kilometers.estimated_diameter_max);
         } else {
             console.log(response.statusCode);
         }
@@ -90,13 +91,13 @@ var getNEO = function() {
 
 function catName(name) {
     if (!name) {
-        name = "Tigger"
+        name = "Tigger";
     }
     console.log("My cat's name is " + name);
 }
 
 let getTweets = function() {
-    let client = new twitter(dataKeys.twitterKeys);
+    let client = new twitter(dataKeys.twitter);
     let params = { screen_name: 'ednas', count: 10 };
 
     client.get('statuses/user_timeline', params, function(err, tweets, res) {
@@ -115,14 +116,7 @@ let getTweets = function() {
                 });
             }
             console.log(data);
-            // console.log(tweets[0].user.description);
             writeToLog(data);
-
-            // fs.appendFile("log.txt", output, function(err) {
-            //     if (err) throw err;
-            //     console.log('Saved!');
-            // });
-
         }
 
     });
@@ -161,17 +155,16 @@ let getMeMovie = function(movieName) {
             fs.appendFile("log.txt", output, function(err) {
                 if (err) throw err;
                 console.log('Saved!');
-                space
             });
         }
     });
-}
+};
 
 let doWhatItSays = function() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         console.log(data);
         writeToLog(data);
-        let dataArr = data.split(',')
+        let dataArr = data.split(',');
 
         if (dataArr.length == 2) {
             pick(dataArr[0], dataArr[1]);
@@ -180,7 +173,7 @@ let doWhatItSays = function() {
         }
 
     });
-}
+};
 
 let pick = function(caseData, functionData) {
     switch (caseData) {
@@ -205,7 +198,7 @@ let pick = function(caseData, functionData) {
         default:
             console.log('LIRI doesn\'t know that');
     }
-}
+};
 
 //run this on load of js file
 let runThis = function(argOne, argTwo) {
