@@ -11,10 +11,16 @@ let fs = require('fs'); //file system
 let twitter = require('twitter');
 let Spotify = require('node-spotify-api');
 let request = require('request');
+var inquirer = require('inquirer');
+
 let space = "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
+let header = "================= Extraordinary Liri found this ...=================="
+let program = process.argv[2];
+let choice = process.argv[3];
 
-console.log(process.env.PORT);
 
+
+// Function that writes all the data from output to the logfile
 function writeToLog(data) {
     fs.appendFile("log.txt", '\r\n\r\n', function(err) {
         if (err) {
@@ -26,7 +32,7 @@ function writeToLog(data) {
         if (err) {
             return console.log(err);
         }
-        console.log("log.txt was updated!");
+        console.log(space + "log.txt was updated!");
     });
 };
 
@@ -46,17 +52,13 @@ function getMeSpotify(songName) {
             return;
         } else {
             output =
-                "================= LIRI FOUND THIS FOR YOU...==================" +
+                space + header +
                 space + "Song Name: " + "'" + songName.toUpperCase() + "'" +
                 space + "Album Name: " + data.tracks.items[0].album.name +
                 space + "Artist Name: " + data.tracks.items[0].album.artists[0].name +
                 space + "URL: " + data.tracks.items[0].album.external_urls.spotify + "\n";
             console.log(output);
             writeToLog(output);
-            // fs.appendFile("log.txt", output, function(err) {
-            //     if (err) throw err;
-            //     console.log('Saved!');
-            // });
         }
     });
 }
@@ -101,22 +103,22 @@ let getTweets = function() {
     let params = { screen_name: 'ednas', count: 10 };
 
     client.get('statuses/user_timeline', params, function(err, tweets, res) {
+        let data = []; //empty array to hold data
 
+        data.push(space + header);
         if (err) {
             console.log('Error occured: ' + err);
             return;
         } else {
-            // let data = space + 'Created at: ' + tweets.created_at +
-            //     space + 'Tweets: ' + tweets.text;
-            let data = []; //empty array to hold data
             for (let i = 0; i < tweets.length; i++) {
-                data.push({
-                    'Created at: ': tweets[i].created_at,
-                    'Tweets: ': tweets[i].text,
-                });
+                data.push(
+                    space + 'Created at: ' + tweets[i].created_at +
+                    space + 'Tweet: ' + tweets[i].text + "\n"
+                );
             }
-            console.log(data);
-            writeToLog(data);
+            let newData = data.join('');
+            console.log(newData);
+            writeToLog(newData);
         }
 
     });
@@ -137,8 +139,7 @@ let getMeMovie = function(movieName) {
             return;
         } else {
             let jsonData = JSON.parse(body);
-            // console.log(jsonData);
-            output = space + "================= LIRI FOUND THIS FOR YOU...==================" +
+            output = space + header +
                 space + 'Title: ' + jsonData.Title +
                 space + 'Year: ' + jsonData.Year +
                 space + 'Rated: ' + jsonData.Rated +
@@ -151,11 +152,7 @@ let getMeMovie = function(movieName) {
                 space + 'IMDb Rating: ' + jsonData.imdbRating + "\n";
 
             console.log(output);
-
-            fs.appendFile("log.txt", output, function(err) {
-                if (err) throw err;
-                console.log('Saved!');
-            });
+            writeToLog(output);
         }
     });
 };
@@ -164,6 +161,7 @@ let doWhatItSays = function() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         console.log(data);
         writeToLog(data);
+
         let dataArr = data.split(',');
 
         if (dataArr.length == 2) {
@@ -175,34 +173,62 @@ let doWhatItSays = function() {
     });
 };
 
-let pick = function(caseData, functionData) {
-    switch (caseData) {
-        case 'my-tweets':
-            getTweets();
-            break;
-        case 'spotify-this-song':
-            getMeSpotify(functionData);
-            break;
-        case 'movie-this':
-            getMeMovie(functionData);
-            break;
-        case 'meow':
-            catName(functionData);
-            break;
-        case 'do-what-it-says':
-            doWhatItSays();
-            break;
-        case 'neo':
-            getNEO();
-            break;
-        default:
-            console.log('LIRI doesn\'t know that');
+let questions = [{
+        type: 'list',
+        name: 'programs',
+        message: 'What would you like to do?',
+        choices: ['Spotify', 'Movie', 'Get Latest Tweets', 'Name my cat', 'NASA info', 'Do what it says']
+    },
+    {
+        type: 'input',
+        name: 'movieChoice',
+        message: 'What\'s the name of the movie you would like?',
+        when: function(answers) {
+            return answers.programs == 'Movie';
+        }
+    },
+    {
+        type: 'input',
+        name: 'songChoice',
+        message: 'What\'s the name of the song you would like?',
+        when: function(answers) {
+            return answers.programs == 'Spotify';
+        }
+    },
+    {
+        type: 'input',
+        name: 'catName',
+        message: 'What would you name your cat?',
+        when: function(answers) {
+            return answers.programs == 'Name my cat';
+        }
     }
-};
+]
 
-//run this on load of js file
-let runThis = function(argOne, argTwo) {
-    pick(argOne, argTwo);
-};
-
-runThis(process.argv[2], process.argv[3]);
+inquirer
+    .prompt(questions)
+    .then(answers => {
+        console.log("Your choice was: " + answers.programs);
+        switch (answers.programs) {
+            case 'Get Latest Tweets':
+                getTweets();
+                break;
+            case 'Spotify':
+                getMeSpotify(answers.songChoice);
+                break;
+            case 'Movie':
+                getMeMovie(answers.movieChoice);
+                break;
+            case 'Name my cat':
+                catName(answers.catName);
+                break;
+            case 'Do what it says':
+                doWhatItSays();
+                break;
+            case 'NASA info':
+                getNEO();
+                break;
+            default:
+                console.log('LIRI doesn\'t know that');
+        }
+    });
