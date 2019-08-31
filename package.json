@@ -9,10 +9,10 @@
   "author": "Edna Jonsson",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^6.0.0",
-    "inquirer": "^6.2.0",
-    "node-spotify-api": "^1.0.7",
-    "request": "^2.87.0",
+    "dotenv": "^6.2.0",
+    "inquirer": "^6.5.2",
+    "node-spotify-api": "^1.1.1",
+    "request": "^2.88.0",
     "spotify": "^0.3.0",
     "twitter": "^1.7.1"
   }

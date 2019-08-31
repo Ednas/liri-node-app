@@ -72,7 +72,7 @@ function getNEO() {
     var endDate = "1999-12-10";
     // In case that no date is passed through (API defaults to end date + 7 days from start date)
     if (startDate === undefined) {
-        startDate = "12/04/1996";
+        startDate = "1996-12-01";
     }
     // URL for the API
     var urlHit = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=smpOoGW6IuQgqcUmIAgJ0fICeLXteQwyUeazHF0c";

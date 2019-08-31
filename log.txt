@@ -789,3 +789,96 @@ Has up to date sh… https://t.co/bpTgnvagyA
 
               Created at: Wed Aug 29 19:47:18 +0000 2018
               Tweet: Wow, then to add to it, their domain ends with .global, but they forgot about their global customers. https://t.co/I2HIJueuC4
+
+
+// Get the users position
+
+function getPosition(position){
+    console.log(position);
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    yelpSearch(lat, lon);
+    console.log(lat,lon);
+}
+
+function yelpSearch (lat, lon) {
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ lat +","+ lon +"&radius=50&type=restaurant&keyword=Pizza&key=AIzaSyB3mWQO5pN0C9zmp5kRAD3H10NYKVv3ohA"
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+      }).then(function(response) {
+        console.log(response);
+      });
+}
+navigator.geolocation.getCurrentPosition(getPosition);
+
+
+              ================= Extraordinary Liri found this ...==================
+              -----------------    Data of Near Earth Objects    ------------------
+              Name: (2000 AF205)
+              ID: 3025767
+              Hazardous: true
+              Diamater min (Km): 0.1214940408
+              Diamater max (Km): 0.2716689341
+
+
+              ================= Extraordinary Liri found this ...==================
+              Title: While You Were Sleeping
+              Year: 1995
+              Rated: PG
+              IMDB Rating: 6.7
+              Country: USA
+              Language: English
+              Plot: A hopeless romantic Chicago Transit Authority token collector is mistaken for the fiancée of a coma patient.
+              Actors: Sandra Bullock, Bill Pullman, Peter Gallagher, Peter Boyle
+              Tomato Rating: 81%
+              IMDb Rating: 6.7
+
+
+
+              ================= Extraordinary Liri found this ...==================
+              Created at: Sat Aug 31 21:06:50 +0000 2019
+              Tweet: Yay, finally got Heroku to work. They've been down for hours today.
+
+              Created at: Sat Aug 31 20:17:42 +0000 2019
+              Tweet: RT @JMBooyah: I know it's late on a Thursday before a long weekend BUT friends, family, strangers: @SamAugustDean, @suhaunah &amp; I want to do…
+
+              Created at: Sat Aug 31 20:11:45 +0000 2019
+              Tweet: @Bigun89 Woohoo! Way to go!
+
+              Created at: Sat Aug 31 18:17:00 +0000 2019
+              Tweet: @srigokulkrish @AaronCuddeback Autocorrect. Sorry. Qwiklabs
+
+              Created at: Sat Aug 31 18:16:28 +0000 2019
+              Tweet: @srigokulkrish @AaronCuddeback You get 1 month of Quiklabs for signing on to the challenge.
+
+              Created at: Sat Aug 31 18:00:04 +0000 2019
+              Tweet: @srigokulkrish @AaronCuddeback It says you get access to the Coursera course and Qwiklabs.
+
+              Created at: Sat Aug 31 16:11:43 +0000 2019
+              Tweet: For my friends doing #100DaysOfCode this seems like a good opportunity. The Associated Cloud Engineer track include… https://t.co/zp4TCngxhJ
+
+              Created at: Fri Aug 30 18:31:46 +0000 2019
+              Tweet: RT @techgirl1908: The wait is over! I've just released my free #Java course! 🎉
+
+The course is designed for beginners to programming, so if…
+
+              Created at: Fri Aug 30 16:22:52 +0000 2019
+              Tweet: RT @TVAnews: @icosanaut @nuclear94 Out of respect for the late, great Stan Lee, we no longer grant access to the room with the radioactive…
+
+              Created at: Fri Aug 30 03:46:40 +0000 2019
+              Tweet: This is a great list of API's for projects. https://t.co/3HmKLyOmzf
+
+
+================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: '"I WANT IT THAT WAY"
+'
+              Album Name: The Hits--Chapter One
+              Artist Name: Backstreet Boys
+              URL: https://open.spotify.com/album/1NslKOZobWxINFaFkLol3r
+
+================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: 'ONE MORE TIME'
+              Album Name: ...Baby One More Time (Digital Deluxe Version)
+              Artist Name: Britney Spears
+              URL: https://open.spotify.com/album/3WNxdumkSMGMJRhEgK80qx
