@@ -882,3 +882,25 @@ The course is designed for beginners to programming, so if…
               Album Name: ...Baby One More Time (Digital Deluxe Version)
               Artist Name: Britney Spears
               URL: https://open.spotify.com/album/3WNxdumkSMGMJRhEgK80qx
+
+
+              ================= Extraordinary Liri found this ...==================
+              -----------------    Data of Near Earth Objects    ------------------
+              Name: (2000 AF205)
+              ID: 3025767
+              Hazardous: true
+              Diamater min (Km): 0.1214940408
+              Diamater max (Km): 0.2716689341
+
+
+              ================= Extraordinary Liri found this ...==================
+              Title: The Lion King
+              Year: 1994
+              Rated: G
+              IMDB Rating: 8.5
+              Country: USA
+              Language: English, Swahili, Xhosa, Zulu
+              Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+              Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+              Tomato Rating: 93%
+              IMDb Rating: 8.5

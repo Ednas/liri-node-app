@@ -74,8 +74,9 @@ function getNEO() {
     if (startDate === undefined) {
         startDate = "1996-12-01";
     }
+    var nasa_key = process.env.NASA_KEY;
     // URL for the API
-    var urlHit = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=smpOoGW6IuQgqcUmIAgJ0fICeLXteQwyUeazHF0c";
+    var urlHit = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=" + nasa_key;
 
     request(urlHit, function(error, response, body) {
         if (error) {
@@ -131,7 +132,8 @@ let getMeMovie = function(movieName) {
     }
     //Get your OMDb API key creds here http://www.omdbapi.com/apikey.aspx
     // t = movietitle, y = year, plot is short, then the API key
-    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=33981212";
+    const omdb = process.env.OMDB_KEY
+    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=" + omdb;
 
     request(urlHit, function(err, res, body) {
         if (err) {
